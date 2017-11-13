@@ -1,0 +1,5 @@
+= link_to  vote_post_path(post), {remote: true, method: :put, class: 'btn btn-default', id: post.id} do
+  span
+    i.fa.fa-heart-o
+  =< post.get_upvotes.size
+end

@@ -1,0 +1,7 @@
+.media
+  p.small.pull-right = comment.created_at.to_formatted_s(:short)
+  .media-body                                
+    h5.media-heading.user_name 
+      = comment.user.name
+      =< comment.user.last_name
+    = simple_format(comment.content) 

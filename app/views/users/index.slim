@@ -1,0 +1,13 @@
+.col.align-self-center
+  table class='table table-condensed'
+    thead
+      tr
+        th = t('users.attr.name')
+        th = t('users.attr.last_name')
+        th = t('users.attr.email')
+        th = t('users.attr.age')
+        th colspan="3"
+    tbody
+      = render partial: 'user', collection: @users || t('errors.no_users')
+      
+  = link_to t('buttons.users.create'), new_user_path, class: 'btn btn-success' 

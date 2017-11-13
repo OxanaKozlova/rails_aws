@@ -1,0 +1,33 @@
+.container
+  = form_for(@post) do |f|
+    - if @post.errors.any?
+      .alert.alert-danger
+        error_explanation
+          h2
+            = pluralize(@post.errors.count, t('errors.error')) 
+            = t('errors.save_post')
+          ul
+          - @post.errors.full_messages.each do |message|
+            li = message
+
+    .form-group.row
+      = f.label :title, class: 'col-sm-1 col-form-label'
+      .col-sm-8
+        = f.text_field :title, autofocus: true, class: "form-control", placeholder: 'Title'      
+    .form-group.row
+      = f.label :content, class: 'col-sm-1 col-form-label'
+      .col-sm-8
+        = f.cktext_area :content, class: 'form-control'
+    .form-group.row
+      .preview-container
+        = f.label :image, class: 'col-sm-1 col-form-label'
+        .thumbnail.image-preview-container.col-xs-6.col-md-3.preview
+          = cl_image_tag @post.image,  id: 'img_prev', :crop => :fill 
+        .col-sm-8.col-sm-offset-1
+          = f.file_field :image, class: 'filestyle'
+    br
+    br  
+    = button_tag(type: 'submit', class: 'btn btn-success btn-space') do
+      .icon-ok.icon-white  = t('buttons.posts.save')
+      
+    = link_to  t('buttons.posts.back'), posts_path, class: 'btn btn-warning'

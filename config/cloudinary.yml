@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dbnbbapqq
+  api_key: '996749552725264'
+  api_secret: RFXHtgQ2TI_P3RiKK8AH3X16HSg
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dbnbbapqq
+  api_key: '996749552725264'
+  api_secret: RFXHtgQ2TI_P3RiKK8AH3X16HSg
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dbnbbapqq
+  api_key: '996749552725264'
+  api_secret: RFXHtgQ2TI_P3RiKK8AH3X16HSg
+  enhance_image_tag: true
+  static_image_support: false

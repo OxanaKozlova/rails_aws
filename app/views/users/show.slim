@@ -1,0 +1,16 @@
+h4
+  strong Name:
+  =< @user.name  
+h4
+  strong Last Name:
+  =< @user.last_name
+h4
+  strong Email:
+  =< @user.email
+h4
+  strong Age:
+  =< @user.age
+    
+
+= link_to t('buttons.users.edit'), edit_user_path(@user), class: 'btn btn-success btn-space'
+= link_to t('buttons.users.back'), users_path, class: 'btn btn-warning'

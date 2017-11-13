@@ -1,0 +1,10 @@
+.grid-item
+  figure.effect-marley
+    = link_to post do 
+      = cl_image_tag post.image, :crop => :fill
+      figcaption
+        h2  ="#{post.title} "
+        p ="#{post.user.name} #{post.user.last_name}"      
+    end
+  .row.like-button
+    = render partial: 'like', locals: { post: post }

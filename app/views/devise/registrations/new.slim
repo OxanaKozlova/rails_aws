@@ -1,0 +1,45 @@
+h2 Sign up
+
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = render partial: 'message'
+
+  .form-group.row
+    = f.label :name, class: "col-sm-1 col-form-label"
+    .col-sm-4
+      = f.text_field :name, autofocus: true,  class: "form-control",  placeholder: "Name"
+
+  .form-group.row
+    = f.label :last_name, class: "col-sm-1 col-form-label"
+    .col-sm-4
+      = f.text_field :last_name,  class: "form-control",  placeholder: "Last Name"
+      
+  .form-group.row
+    = f.label :email, class: "col-sm-1 col-form-label"
+    .col-sm-4
+      = f.email_field :email,  class: "form-control",  placeholder: "Email"
+
+  .form-group.row
+    = f.label :age, class: "col-sm-1 col-form-label"
+    .col-sm-4
+      = f.number_field :age,  class: "form-control",  placeholder: "Age"
+
+  .form-group.row
+    br
+    = f.label :password, class: "col-sm-1 col-form-label"
+    .col-sm-4
+      = f.password_field :password, autocomplete: "off", 
+        class: "form-control",  placeholder: "Password"
+      - if @minimum_password_length
+        br
+        em
+          = @minimum_password_length
+          |  characters minimum
+  .form-group.row
+    = f.label :password_confirmation, class: "col-sm-1 col-form-label"
+    .col-sm-4    
+      = f.password_field :password_confirmation, autocomplete: "off", 
+        class: "form-control",  placeholder: "Confirm Password"
+  .btn-group.btn-group
+    = button_tag(type: 'submit', class: "btn btn-success") do
+      .icon-ok.icon-white Sign up
+    = render "devise/shared/links"

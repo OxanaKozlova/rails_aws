@@ -1,0 +1,31 @@
+h4
+  .image
+    .thumbnail.image-preview-container
+      = cl_image_tag @post.image,  :crop => :fill 
+    h5#image 
+      span 
+        ="#{t('posts.attr.title')}: #{@post.title} "
+      br
+      span ="#{t('posts.attr.author')}: #{@post.user.name} #{@post.user.last_name}"
+h4
+  strong = t('posts.attr.content')
+  =< raw(@post.content)    
+- if can? :update, @post
+  = link_to t('buttons.posts.edit'), edit_post_path(@post), class: 'btn btn-success btn-space'
+  = link_to t('links.posts.destroy'), @post, method: :delete, 
+    data: { confirm: 'Are you sure?' },  class: 'btn btn-danger btn-space'
+= link_to t('buttons.posts.back'), posts_path, class: 'btn btn-warning'
+= render 'comments/form'  
+- if @post.comments.present?
+  .container
+    .row
+      .col-md-12
+        .page-header
+          h3 = t('labels.comments')
+        #comments.comments-list
+          = render partial: 'comments/comment', collection: @comments                         
+
+#infinite-scrolling
+  = will_paginate @comments
+  .preload.row.center
+    i.fa.fa-cog.fa-spin.fa-3x.fa-fw

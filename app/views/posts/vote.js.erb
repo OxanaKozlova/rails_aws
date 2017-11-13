@@ -1,0 +1,3 @@
+$("#<%= @post.id%>").bind('ajax:success', function() {
+  $(this).parent().html("<%= escape_javascript(render 'like', post: @post) %>");
+});

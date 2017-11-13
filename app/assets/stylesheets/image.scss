@@ -1,0 +1,43 @@
+.image {
+   position: relative;
+   width: 100%;
+}
+
+h5#image {
+   position: absolute;
+   top: 10px;
+   left: 0;
+   width: 100%;
+   span {
+      color:  #515151;
+      font: bold 24px/45px Helvetica, Sans-Serif;
+      letter-spacing: -1px;
+      background: rgb(238,	238,	224);
+      background: rgba(238,	238,	224, 0.7);
+      padding: 10px;
+      padding-top: 8px;
+      margin-left: 5px;
+   }
+}
+
+
+h6#image {
+   position: absolute;
+   top: 10px;
+   left: 0;
+   width: 100%;
+   span {
+      color:  #515151;
+      font: bold 15px/26px Helvetica, Sans-Serif;
+      letter-spacing: -1px;
+      background: rgb(238,	238,	224);
+      background: rgba(238,	238,	224, 0.7);
+      padding: 5px;
+      padding-top: 4px;
+      margin-left: 20px;
+   }
+}
+
+.preview {
+  margin-left: 15px;
+}
